@@ -9,7 +9,12 @@ import { Gif } from '../../interfaces/gifs.interfaces';
 })
 export class HomePageComponent {
 
-  constructor(private gifsService: GifsService){}
+  firstValue: string = "";
+
+  constructor(private gifsService: GifsService){
+    // if (!localStorage.getItem('history')) return;
+    // this.gifsService.searchTag(JSON.parse(localStorage.getItem('history')!)[0])
+  }
 
   get gifs(): Gif[]{
     return this.gifsService.gifList;
